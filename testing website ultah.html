@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding: 50px;
+      overflow: hidden;
+    }
+    h1 {
+      color: #fff;
+      font-size: 50px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px #000;
+      animation: fadeIn 2s ease-in-out;
+    }
+    p {
+      font-size: 20px;
+      color: #333;
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: inline-block;
+      margin-top: 30px;
+      animation: bounce 2s infinite;
+    }
+    .foto {
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff6f61;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background: #ff3b2e;
+    }
+    /* Animasi */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes bounce {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-10px);}
+    }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 80px;
+      height: 100px;
+      background: red;
+      border-radius: 50% 50% 50% 50%;
+      animation: floatUp 10s infinite;
+    }
+    @keyframes floatUp {
+      0% {bottom: -150px; opacity: 0;}
+      50% {opacity: 1;}
+      100% {bottom: 100%; opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Selamat Ulang Tahun 🎂</h1>
+  <div class="card">
+    <p>Halo <span id="namaTeman">[Nama Teman]</span>!</p>
+    <p>Semoga panjang umur, sehat selalu, dan sukses dalam segala hal.</p>
+    <img src="foto-teman.jpg" alt="Foto Teman" class="foto">
+    <button class="btn" onclick="tambahUcapan()">Klik untuk kejutan 🎁</button>
+    <p id="kejutan"></p>
+  </div>
+
+  <!-- Balon animasi -->
+  <div class="balloon" style="left:20%; background:blue;"></div>
+  <div class="balloon" style="left:50%; background:green;"></div>
+  <div class="balloon" style="left:70%; background:purple;"></div>
+
+  <!-- Musik latar -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/111n8z.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <script>
+    function tambahUcapan() {
+      document.getElementById("kejutan").innerText = "💖 Kamu adalah teman terbaik, semoga harimu penuh kebahagiaan!";
+    }
+  </script>
+</body>
+</html>
